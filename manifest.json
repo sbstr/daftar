@@ -1,0 +1,12 @@
+{
+  "name": "Daftar",
+  "short_name": "Daftar",
+  "description": "منصة عربية للفواتير والتحصيل للمنشآت الخدمية الصغيرة.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f6f2e9",
+  "theme_color": "#1f6f68",
+  "icons": []
+}

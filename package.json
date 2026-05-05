@@ -1,0 +1,15 @@
+{
+  "name": "daftar-saas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Arabic-first SaaS prototype with a self-contained backend for invoicing, collections, customers, VAT summaries, and audit logs.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "reset:data": "node backend/reset-data.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

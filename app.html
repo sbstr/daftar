@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daftar | منصة العمليات للمنشآت الصغيرة</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="التنقل الرئيسي">
+        <a class="brand" href="#home" data-view-link="home">
+          <span class="brand-mark">د</span>
+          <span>
+            <strong data-i18n="brandName">Daftar</strong>
+            <small data-i18n="brandTagline">دفتر منشأتك اليومي</small>
+          </span>
+        </a>
+
+        <nav class="main-nav">
+          <button class="nav-item active" type="button" data-view-link="home">
+            <span class="nav-icon">⌂</span>
+            <span data-i18n="navHome">الرئيسية</span>
+          </button>
+          <button class="nav-item" type="button" data-view-link="invoices">
+            <span class="nav-icon">▣</span>
+            <span data-i18n="navInvoices">الفواتير</span>
+          </button>
+          <button class="nav-item" type="button" data-view-link="collect">
+            <span class="nav-icon">↗</span>
+            <span data-i18n="navCollect">التحصيل</span>
+          </button>
+          <button class="nav-item" type="button" data-view-link="customers">
+            <span class="nav-icon">◎</span>
+            <span data-i18n="navCustomers">العملاء</span>
+          </button>
+          <button class="nav-item" type="button" data-view-link="settings">
+            <span class="nav-icon">⚙</span>
+            <span data-i18n="navSettings">الإعدادات</span>
+          </button>
+        </nav>
+
+        <section class="support-card">
+          <span data-i18n="supportTitle">تحتاج مساعدة؟</span>
+          <p data-i18n="supportBody">أرسل لنا على واتساب ونمشي معك خطوة بخطوة.</p>
+          <button class="ghost-btn" type="button" data-i18n="supportButton">فتح واتساب</button>
+        </section>
+      </aside>
+
+      <div class="main-area">
+        <header class="topbar">
+          <div>
+            <h1 id="viewTitle" data-i18n="homeTitle">وش يحتاج شغلك اليوم؟</h1>
+          </div>
+          <div class="topbar-actions">
+            <span id="backendStatus" class="backend-status">بيانات تجريبية</span>
+            <button id="languageToggle" class="ghost-btn" type="button">English</button>
+            <button class="primary-btn" type="button" data-open-invoice data-i18n="newInvoice">إنشاء فاتورة</button>
+          </div>
+        </header>
+
+        <main>
+          <section id="home" class="view active">
+            <div class="action-strip">
+              <button class="quick-action" type="button" data-open-invoice>
+                <strong data-i18n="quickInvoice">فاتورة جديدة</strong>
+                <span data-i18n="quickInvoiceHint">أنشئها وأرسلها واتساب</span>
+              </button>
+              <button class="quick-action" type="button" data-view-link="collect">
+                <strong data-i18n="quickCollect">تابع التحصيل</strong>
+                <span data-i18n="quickCollectHint">الفواتير المتأخرة والتذكيرات</span>
+              </button>
+              <button class="quick-action" type="button" data-view-link="customers">
+                <strong data-i18n="quickCustomer">أضف عميل</strong>
+                <span data-i18n="quickCustomerHint">بياناته وفواتيره في مكان واحد</span>
+              </button>
+            </div>
+
+            <div class="metric-grid">
+              <article class="metric-card">
+                <div class="metric-card-top">
+                  <span data-i18n="metricCash">وصل اليوم</span>
+                  <small>مدفوع</small>
+                </div>
+                <strong id="metricCashValue" class="data-number" dir="ltr">7,850 ريال</strong>
+                <p id="metricCashHint" data-i18n="metricCashHint">من 6 عمليات دفع</p>
+              </article>
+              <article class="metric-card warning">
+                <div class="metric-card-top">
+                  <span data-i18n="metricFollow">تحتاج متابعة</span>
+                  <small>إجراء مطلوب</small>
+                </div>
+                <strong id="metricFollowValue" class="data-number" dir="ltr">7 فواتير</strong>
+                <p data-i18n="metricFollowHint">جاهزة لتذكير واتساب</p>
+              </article>
+              <article class="metric-card">
+                <div class="metric-card-top">
+                  <span data-i18n="metricVat">ضريبة مستحقة</span>
+                  <small>تقديري</small>
+                </div>
+                <strong id="metricVatValue" class="data-number" dir="ltr">4,260 ريال</strong>
+                <p data-i18n="metricVatHint">حتى نهاية الشهر الحالي</p>
+              </article>
+            </div>
+
+            <div id="taxProfileNotice" class="tax-profile-notice">
+              الإطلاق التجريبي بدون رقم ضريبي: لن نضيف ضريبة 15% ولن نرسل الفواتير إلى ZATCA حتى تضيف رقمًا ضريبيًا صحيحًا.
+            </div>
+
+            <div class="analytics-grid">
+              <section class="panel chart-panel">
+                <div class="panel-heading compact">
+                  <h2>تحصيل الشهر</h2>
+                  <span id="chartTotalValue">43,100 ريال</span>
+                </div>
+                <div class="donut-row">
+                  <div class="donut-chart" style="--value: 74">
+                    <strong id="collectionRateValue" class="data-number">74%</strong>
+                  </div>
+                  <div class="chart-legend">
+                    <span><i class="paid-dot"></i> مدفوعة: <strong class="data-number">31,800 ريال</strong></span>
+                    <span><i class="due-dot"></i> تحتاج متابعة: <strong class="data-number">8,400 ريال</strong></span>
+                    <span><i class="sent-dot"></i> مرسلة: <strong class="data-number">2,900 ريال</strong></span>
+                  </div>
+                </div>
+              </section>
+
+              <section class="panel chart-panel">
+                <div class="panel-heading compact">
+                  <h2>حالات الفواتير</h2>
+                  <span>آخر 30 يوم</span>
+                </div>
+                <div class="bar-chart app-bars" aria-label="حالات الفواتير">
+                  <div style="--height: 82%"><span></span><strong>مدفوعة</strong><em class="data-number">38</em></div>
+                  <div style="--height: 48%"><span></span><strong>شوهدت</strong><em class="data-number">22</em></div>
+                  <div style="--height: 32%"><span></span><strong>تذكير</strong><em class="data-number">14</em></div>
+                  <div style="--height: 18%"><span></span><strong>مسودة</strong><em class="data-number">8</em></div>
+                </div>
+              </section>
+
+              <section class="panel chart-panel">
+                <div class="panel-heading compact">
+                  <h2>تدفق التحصيل</h2>
+                  <span>7 أيام</span>
+                </div>
+                <div class="line-chart" aria-label="تدفق التحصيل">
+                  <svg viewBox="0 0 320 130" role="img">
+                    <polyline points="8,108 58,92 108,98 158,62 208,72 258,38 312,26" />
+                    <circle cx="8" cy="108" r="4" />
+                    <circle cx="58" cy="92" r="4" />
+                    <circle cx="108" cy="98" r="4" />
+                    <circle cx="158" cy="62" r="4" />
+                    <circle cx="208" cy="72" r="4" />
+                    <circle cx="258" cy="38" r="4" />
+                    <circle cx="312" cy="26" r="4" />
+                  </svg>
+                  <div class="line-axis"><span>الأحد</span><span>الثلاثاء</span><span>الخميس</span><span>اليوم</span></div>
+                </div>
+              </section>
+            </div>
+
+            <div class="content-grid">
+              <section class="panel">
+                <div class="panel-heading">
+                  <h2 data-i18n="todayTitle">اليوم في Daftar</h2>
+                  <button class="text-btn" type="button" data-view-link="collect" data-i18n="viewAll">عرض الكل</button>
+                </div>
+                <div class="timeline">
+                  <article>
+                    <span class="status-dot paid"></span>
+                    <div>
+                      <strong>وصلت دفعة من شركة نمو</strong>
+                      <p><span class="data-number">6,800 ريال</span>، وتم تجهيز الفاتورة الضريبية.</p>
+                    </div>
+                  </article>
+                  <article>
+                    <span class="status-dot due"></span>
+                    <div>
+                      <strong>فاتورة أحمد العتيبي تحتاج تذكير</strong>
+                      <p>العميل شاهد رابط الدفع ولم يكمل العملية.</p>
+                    </div>
+                  </article>
+                  <article>
+                    <span class="status-dot sent"></span>
+                    <div>
+                      <strong>موعد جديد غدًا</strong>
+                      <p>تم إرسال تأكيد الموعد ورابط العربون.</p>
+                    </div>
+                  </article>
+                </div>
+              </section>
+
+              <section class="panel vat-panel">
+                <div class="panel-heading">
+                  <h2 data-i18n="zatcaTitle">جاهزية الفوترة</h2>
+                </div>
+                <div class="check-list">
+                  <span id="readinessBusiness">النشاط في وضع إطلاق تجريبي</span>
+                  <span id="readinessVat">الضريبة مؤجلة حتى التفعيل الرسمي</span>
+                  <span>وصف الخدمات بالعربي</span>
+                  <span class="soft-warning">3 عملاء ناقصهم رقم ضريبي</span>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section id="invoices" class="view">
+            <div class="content-grid wide-first">
+              <section class="panel invoice-builder">
+                <div class="panel-heading">
+                  <h2 data-i18n="invoiceBuilderTitle">إنشاء فاتورة</h2>
+                  <span class="soft-label" data-i18n="invoiceBuilderHint">الحقول العربية أساسية وليست اختيارية</span>
+                </div>
+
+                <form id="invoiceForm" novalidate>
+                  <div class="form-grid">
+                    <label>
+                      اسم العميل
+                      <input id="customerName" type="text" value="أحمد العتيبي" data-smart-dir />
+                    </label>
+                    <label>
+                      رقم الجوال
+                      <input id="phoneNumber" type="text" value="0551234567" inputmode="tel" />
+                      <small id="phoneHint">اكتبه مثل: 05xxxxxxxx</small>
+                    </label>
+                    <label>
+                      الرقم الضريبي للعميل (اختياري)
+                      <input id="vatNumber" type="text" value="" inputmode="numeric" />
+                      <small id="vatHint">اختياري حاليًا. لا تضف ضريبة قبل التسجيل الرسمي.</small>
+                    </label>
+                    <label>
+                      السجل التجاري
+                      <input id="crNumber" type="text" value="1010456789" inputmode="numeric" />
+                    </label>
+                  </div>
+
+                  <label>
+                    وصف الخدمة بالعربي
+                    <input id="serviceDescription" type="text" value="دورة إدارة المبيعات" data-smart-dir />
+                  </label>
+
+                  <div class="form-grid">
+                    <label>
+                      قيمة الخدمة
+                      <input id="invoiceAmount" type="number" min="1" value="2400" />
+                    </label>
+                    <label>
+                      الضريبة
+                      <select id="vatMode">
+                        <option value="none">بدون ضريبة حاليًا</option>
+                        <option value="inclusive">المبلغ شامل ضريبة القيمة المضافة</option>
+                        <option value="exclusive">إضافة الضريبة فوق المبلغ</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div id="formMessage" class="form-message">الفاتورة جاهزة للإرسال.</div>
+
+                  <div class="button-row">
+                    <button class="primary-btn" type="submit">حفظ وإرسال واتساب</button>
+                    <button class="ghost-btn" type="button">حفظ كمسودة</button>
+                  </div>
+                </form>
+              </section>
+
+              <aside class="panel invoice-preview" aria-label="معاينة الفاتورة">
+                <div class="invoice-paper">
+                  <div class="invoice-top">
+                    <strong>فاتورة ضريبية</strong>
+                    <span>INV-1042</span>
+                  </div>
+                  <div class="invoice-lines">
+                    <p><span>العميل</span><strong id="previewCustomer">أحمد العتيبي</strong></p>
+                    <p><span>الخدمة</span><strong id="previewService">دورة إدارة المبيعات</strong></p>
+                    <p><span>قبل الضريبة</span><strong id="previewSubtotal" class="data-number">2,087 ريال</strong></p>
+                    <p><span>ضريبة القيمة المضافة</span><strong id="previewVat" class="data-number">313 ريال</strong></p>
+                    <p class="total"><span>الإجمالي</span><strong id="previewTotal" class="data-number">2,400 ريال</strong></p>
+                  </div>
+                  <div class="qr-box">QR</div>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <section id="collect" class="view">
+            <div class="content-grid wide-first">
+              <section class="panel">
+                <div class="panel-heading">
+                  <h2 data-i18n="collectTitle">محرك التحصيل الذكي</h2>
+                  <span class="soft-label">قوالب حسب نشاطك، وليست رسائل عامة</span>
+                </div>
+
+                <div class="template-list">
+                  <button class="template-option active" type="button" data-template="training">
+                    <span>مركز تدريب</span>
+                    <strong>عربون + تذكير + فاتورة نهائية</strong>
+                  </button>
+                  <button class="template-option" type="button" data-template="consulting">
+                    <span>استشارات ومحاماة</span>
+                    <strong>دفعة مقدمة + مراحل مشروع</strong>
+                  </button>
+                  <button class="template-option" type="button" data-template="workshop">
+                    <span>ورشة وصيانة</span>
+                    <strong>موافقة عرض + عربون قطع غيار</strong>
+                  </button>
+                  <button class="template-option" type="button" data-template="appointments">
+                    <span>مواعيد وخدمات</span>
+                    <strong>حجز مدفوع + رسوم عدم حضور</strong>
+                  </button>
+                </div>
+
+                <div class="collection-settings">
+                  <label>
+                    العربون أو الدفعة الأولى
+                    <input id="depositPercent" type="range" min="0" max="100" step="5" value="30" />
+                    <span id="depositLabel" class="inline-value">30%</span>
+                  </label>
+                  <label>
+                    أول تذكير بعد
+                    <select id="firstReminder">
+                      <option value="24">24 ساعة</option>
+                      <option value="48">48 ساعة</option>
+                      <option value="72">3 أيام</option>
+                    </select>
+                  </label>
+                </div>
+              </section>
+
+              <aside class="panel phone-panel">
+                <div class="phone">
+                  <div class="phone-top">WhatsApp</div>
+                  <div id="messagePreview" class="message-bubble"></div>
+                  <button id="copyMessage" class="whatsapp-btn" type="button">نسخ رسالة واتساب</button>
+                </div>
+              </aside>
+            </div>
+
+            <section class="panel table-panel">
+              <div class="panel-heading">
+                <h2>متابعة الفواتير</h2>
+                <span class="soft-label">من رسالة مرسلة إلى مبلغ محصل</span>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>العميل</th>
+                      <th>الخدمة</th>
+                      <th>المبلغ</th>
+                      <th>الحالة</th>
+                      <th>الإجراء القادم</th>
+                    </tr>
+                  </thead>
+                  <tbody id="pipelineRows"></tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <section id="customers" class="view">
+            <section class="panel">
+              <div class="panel-heading">
+                <h2 data-i18n="customersTitle">العملاء</h2>
+                <div class="search-box">
+                  <input id="customerSearch" type="search" placeholder="ابحث بالاسم أو الجوال" data-smart-dir />
+                </div>
+              </div>
+              <div id="customerCards" class="customer-grid"></div>
+            </section>
+          </section>
+
+          <section id="settings" class="view">
+            <div class="content-grid">
+              <section class="panel">
+                <div class="panel-heading">
+                  <h2>بيانات المنشأة</h2>
+                </div>
+                <form id="orgSettingsForm" novalidate>
+                  <label>
+                    اسم المنشأة بالعربي
+                    <input id="orgNameAr" type="text" value="مركز نمو للتدريب" data-smart-dir />
+                  </label>
+                  <label>
+                    حالة ضريبة القيمة المضافة
+                    <select id="orgVatStatus">
+                      <option value="not_registered">إطلاق تجريبي بدون ضريبة</option>
+                      <option value="registered">مسجل ولدي رقم ضريبي</option>
+                    </select>
+                  </label>
+                  <label>
+                    الرقم الضريبي
+                    <input id="orgVatNumber" type="text" value="" inputmode="numeric" placeholder="اتركه فارغًا حتى التسجيل الرسمي" />
+                  </label>
+                  <label>
+                    حالة النشاط
+                    <select id="orgBusinessStatus">
+                      <option value="none">إكمال بيانات النشاط لاحقًا</option>
+                      <option value="freelance">وثيقة عمل حر</option>
+                      <option value="cr">سجل تجاري</option>
+                    </select>
+                  </label>
+                  <label>
+                    السجل التجاري
+                    <input id="orgCrNumber" type="text" value="" inputmode="numeric" placeholder="اختياري في الإطلاق التجريبي" />
+                  </label>
+                  <label>
+                    وضع الإطلاق
+                    <select id="orgLaunchMode">
+                      <option value="trial_no_tax">إطلاق تجريبي بدون ضريبة</option>
+                      <option value="production_ready">جاهز للإنتاج</option>
+                    </select>
+                  </label>
+                  <p id="orgSettingsMessage" class="form-message">وضع الإطلاق التجريبي يعمل بدون ضريبة وبدون إرسال ZATCA.</p>
+                  <button class="primary-btn" type="submit">حفظ إعدادات الإطلاق</button>
+                </form>
+              </section>
+              <section class="panel">
+                <div class="panel-heading">
+                  <h2>طريقة التواصل</h2>
+                </div>
+                <div class="check-list">
+                  <span>واتساب للدعم مفعل</span>
+                  <span>رسائل التذكير بالعربية</span>
+                  <span>الفواتير تحفظ بالعربية</span>
+                  <span>واجهة English متاحة كخيار ثانوي</span>
+                </div>
+              </section>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">تم نسخ الرسالة</div>
+    <script src="app.js"></script>
+  </body>
+</html>
